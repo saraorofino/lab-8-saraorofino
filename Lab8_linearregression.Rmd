@@ -35,14 +35,30 @@ Y-intercept: At year 0, there was a negative import of fresh salmon equal to 1,4
 
 ##2. 
 
-```{r}
-plot(salmon_model)
-
+```{r, echo = FALSE}
 par(mfrow = c(2,2))
-  plot(salmon_model)
+  plot(salmon_model) # use this code to get all four plots side-by-side in knitted document 
 ```
+
+  
 Normality: Residuals appear to be mostly normally distributed, however there are a handful of lower outliers that might be slightly skewing the data. 
 
 Heteroscedasticity: most of the values appear to fall above the line, where they should be falling in a random pattern mostly evenly about the dotted line.
 
 Outliers: there are a handful of lower outliers that are concering, but if the measurement collection was sound, they should not be excluded. 
+
+##3.
+
+1. Does the year significanly predict salmon imports?  
+  
+Yes, the model significantly predicts salmon imports p-value < 0.001.  
+  
+2. What does the R^2^ value actually mean in words?  
+  
+R^2^ = 0.9478  94.78% of the variance in fresh salmon imports is explained by this model (year).   
+  
+3. What proportion of the variance of salmon imports is NOT explained by year?  
+  
+6.22% of the variance of fresh salmon imports is NOT explained by this model (year).  
+
+##4. 

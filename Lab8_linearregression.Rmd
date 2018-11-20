@@ -34,3 +34,15 @@ Slope: The slope of the model indicates that for every increase year there is an
 Y-intercept: At year 0, there was a negative import of fresh salmon equal to 1,498,240 (1000 pounds). This is concerning because there shouldn't be a negative value of imports. The lowest the imports should be is zero. Likely this indicates that the model can't be used to accurately assess past values for fresh salmon imports (1000 pounds). 
 
 ##2. 
+
+```{r}
+plot(salmon_model)
+
+par(mfrow = c(2,2))
+  plot(salmon_model)
+```
+Normality: Residuals appear to be mostly normally distributed, however there are a handful of lower outliers that might be slightly skewing the data. 
+
+Heteroscedasticity: most of the values appear to fall above the line, where they should be falling in a random pattern mostly evenly about the dotted line.
+
+Outliers: there are a handful of lower outliers that are concering, but if the measurement collection was sound, they should not be excluded. 

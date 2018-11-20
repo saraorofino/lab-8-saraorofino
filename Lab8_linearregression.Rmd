@@ -9,4 +9,28 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-1. 
+#{.tabset}
+```{r, message = FALSE, include=FALSE}
+library(tidyverse)
+
+salmon <- read_csv("salmon.csv")
+```
+
+## Part 1.
+
+Linear Regression in R:
+
+```{r}
+salmon_model <- lm(salmon_fresh ~ year, data = salmon)
+salmon_model
+
+# slope of the model: y = 7550x - 14982940
+
+```
+Imports of fresh salmon (1000 pounds) = -14982940 + 7550(year)
+
+Slope: The slope of the model indicates that for every increase year there is an increase in imports of fresh salmon of 7550 (1000 pounds). 
+
+Y-intercept: At year 0, there was a negative import of fresh salmon equal to 1,498,240 (1000 pounds). This is concerning because there shouldn't be a negative value of imports. The lowest the imports should be is zero. Likely this indicates that the model can't be used to accurately assess past values for fresh salmon imports (1000 pounds). 
+
+##2. 

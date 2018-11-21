@@ -105,15 +105,23 @@ Find Pearson's R (correlation)
 
 ```{r}
 salmon_cor <- cor(salmon$year, salmon$salmon_fresh)
+# output is only the pearsons r value = 0.9735387
 
-# output 0.9735387
+cor.test(salmon$year, salmon$salmon_fresh)
 ```
   
 2. Would you describe this as a weak/strong negative/positive correlation?  
   
-There is a strong positive relationship between year and fresh salmon imports (pearson's r = 0.9735).  
+There is a strong positive correlation between year and fresh salmon imports (Pearson's r = 0.9735).  
 
+##Part 6.
 
+Write a 1-2 sentence final statement describing the results of your linear regression and Pearson's r finding. 
+
+*Year* significantly predicts fresh salmon imports (b = ?, t(46) = 21.72, p < 0.001) with a strong positive
+correlation between the two (Pearson’s r = 0.97). The overall model (*imports* = 7550(*year*) − 14982940; both in 1000 pounds) explains a significant amount of variance in fresh salmon imports (F(1,26) = 471.9, p < 0.001, R^2^ = 0.95).  
+
+*Note: Unsure which value the b is supposed to be in the first test result output. Couldn't find anything in her example output that matched that number.*
 
 
 

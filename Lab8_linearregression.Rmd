@@ -96,4 +96,27 @@ predictions
 
 ```
 
+##Part 5. 
+
+Find Pearson's R (correlation)  
+
+1. Use the cor() function to find pearson's r for the linear relationship described between the year and fresh salmon imports.    
+
+
+```{r}
+salmon_cor <- cor(salmon$year, salmon$salmon_fresh)
+
+# output 0.9735387
+```
+  
+2. Would you describe this as a weak/strong negative/positive correlation?  
+  
+There is a strong positive relationship between year and fresh salmon imports (pearson's r = 0.9735).  
+
+
+
+
+
+
+
 

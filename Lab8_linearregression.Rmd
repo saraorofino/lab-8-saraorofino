@@ -33,7 +33,7 @@ Slope: The slope of the model indicates that for every increase year there is an
 
 Y-intercept: At year 0, there was a negative import of fresh salmon equal to 1,498,240 (1000 pounds). This is concerning because there shouldn't be a negative value of imports. The lowest the imports should be is zero. Likely this indicates that the model can't be used to accurately assess past values for fresh salmon imports (1000 pounds). 
 
-##2. 
+## Part 2. 
 
 ```{r, echo = FALSE}
 par(mfrow = c(2,2))
@@ -47,7 +47,7 @@ Heteroscedasticity: most of the values appear to fall above the line, where they
 
 Outliers: there are a handful of lower outliers that are concering, but if the measurement collection was sound, they should not be excluded. 
 
-##3.
+##Part 3.
 
 1. Does the year significanly predict salmon imports?  
   
@@ -61,7 +61,7 @@ R^2^ = 0.9478  94.78% of the variance in fresh salmon imports is explained by th
   
 6.22% of the variance of fresh salmon imports is NOT explained by this model (year).  
 
-##4. 
+##Part 4. 
 
 Create a finalized graph of fresh salmon imports by year. 
 
@@ -72,4 +72,28 @@ scale_x_continuous(expand = c(0,0), limits = c(1990, 2017)) +
 labs(x = "Year", y = "U.S. Annual Fresh Salmon Imports\n(1,000 pounds)")
 salmon_final_graph
 ```
+
+##Part 5.
+
+Making predictions using the model:
+
+1. Make a data frame called new_years containing the sequence of years that we want to make predictions for. *Note: column name we create is the **SAME** as the variable name 'year' that the model uses*  
+   
+2. Feed that data frame into the predict() function, letting it know which model to use to make prediction for the new values.
+
+Include interval = "confidence" to also report the lower and upper bounds of the 95% CI for model fit at each year.  
+  
+3. Bind the predicted outcomes (those are the values in the column 'fit') with the 'new_year' data to actually careate a useful table of predicted imports and upper and lower CI.    
+
+```{r}
+new_years <- data.frame(year = c(2022, 2024, 2026, 2028)) #1
+
+future_predict <- predict(salmon_model, newdata = new_years, interval = "confidence") #2
+future_predict
+
+predictions <- data.frame(new_years, future_predict) #3
+predictions
+
+```
+
 
